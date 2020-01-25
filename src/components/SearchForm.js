@@ -9,18 +9,21 @@ const SearchBar = styled.div`
 `
 
 export default function SearchForm({characters, setDisplay}) {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [search, setSearch] = useState("");
 
   const handleChange = (event) => {
-    setSearchTerm(event.target.value);
+    setSearch(event.target.value);
   }
   
   useEffect(() => {
     setDisplay(
-      characters
-        .filter(character => character.name.toLowerCase().includes(searchTerm.toLowerCase()))
-      )
-  }, [searchTerm]);
+      characters.filter(character => character.name.toLowerCase().includes(search.toLowerCase())))
+  }, [search]);
+
+  // const handleChange = e => {
+  //   e.preventDefault();
+  //   setSearch(e.target.value);
+  // };
 
   return (
     <SearchBar className="search-form">
@@ -28,7 +31,7 @@ export default function SearchForm({characters, setDisplay}) {
        <input
         type="text"
         name="search"
-        value={searchTerm}
+        value={search}
         placeholder="Search for a character..."
         onChange={handleChange}
        />
