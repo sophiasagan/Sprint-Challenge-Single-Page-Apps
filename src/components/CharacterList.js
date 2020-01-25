@@ -13,6 +13,7 @@ export default function CharacterList(props) {
       .get('https://rickandmortyapi.com/api/character/')
       .then(response => {
         setCharacters(response.data.results);
+        setDisplay(response.data.results);
       })
         .catch(error => {
           console.error(error);
@@ -20,17 +21,13 @@ export default function CharacterList(props) {
     }
     
     getCharacters();
-  }, [setDisplay]);
+  }, []);
 
   
 
   return (
     <>
-      <SearchForm 
-        characters={characters}
-        setDisplay={setDisplay}
-      />
-
+      <SearchForm characters={characters} setDisplay={setDisplay}/>
       <section className="character-list grid-view">
       {display.map(character => {
         return <CharacterCard key={character.id} character={character}/>
