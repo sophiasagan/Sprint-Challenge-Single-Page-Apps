@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 
-const CenteredDiv = styled.div`
+const SearchBar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center
@@ -12,7 +12,6 @@ export default function SearchForm({characters, setDisplay}) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event) => {
-    console.log(event.target.value.charCodeAt(0))
     setSearchTerm(event.target.value);
   }
   
@@ -24,7 +23,7 @@ export default function SearchForm({characters, setDisplay}) {
   }, [searchTerm]);
 
   return (
-    <CenteredDiv className="search-form">
+    <SearchBar className="search-form">
      <label>
        <input
         type="text"
@@ -34,6 +33,6 @@ export default function SearchForm({characters, setDisplay}) {
         onChange={handleChange}
        />
      </label>
-    </CenteredDiv>
+    </SearchBar>
   );
 }

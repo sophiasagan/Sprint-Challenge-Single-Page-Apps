@@ -15,7 +15,7 @@ export default function CharacterCard({character}) {
   return (
     <Card>
       <div className='character-header'>
-        <img src={character.image} alt={character.name} className='portrait' />
+        <img src={character.image} alt={character.name} className='picture' />
         <h3>{character.name}</h3>
       </div>
       <div className='character-info'>
@@ -24,8 +24,8 @@ export default function CharacterCard({character}) {
       <div className='character-info'>
         Origin: <strong>{character.origin.name}</strong>
       </div>
-      <div className='character-info'>
-        Created: <strong>{character.created}</strong>
+      <div className='character-location'>
+        Location: <strong>{character.location.name}</strong>
       </div>
     </Card>
   );
