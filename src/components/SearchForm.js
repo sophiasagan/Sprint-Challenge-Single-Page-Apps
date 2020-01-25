@@ -8,7 +8,7 @@ const CenteredDiv = styled.div`
   margin-bottom: 2%;
 `
 
-export default function SearchForm({characters, setDisplayed}) {
+export default function SearchForm({characters, setDisplay}) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event) => {
@@ -17,7 +17,7 @@ export default function SearchForm({characters, setDisplayed}) {
   }
   
   useEffect(() => {
-    setDisplayed(
+    setDisplay(
       characters
         .filter(character => character.name.toLowerCase().includes(searchTerm.toLowerCase()))
       )

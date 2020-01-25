@@ -3,9 +3,7 @@ import styled from 'styled-components';
 
 const Card = styled.div`
   background-color: #fff;
-  border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
-  cursor: pointer;
+  border: .5em solid gray;
   position: relative;
   margin: 1rem auto;
   display: flex;

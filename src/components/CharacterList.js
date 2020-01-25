@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function CharacterList() {
   const [characters, setCharacters] = useState([]);
-  const [displayed, setDisplayed] = useState([]);
+  const [display, setDisplay] = useState([]);
 
   useEffect(() => {
     const getCharacters = () => {
@@ -20,7 +20,7 @@ export default function CharacterList() {
     }
     
     getCharacters();
-  }, [[], displayed]);
+  }, [[], display]);
 
   if (!characters) return <h2>Loading character data...</h2>
 
@@ -28,11 +28,11 @@ export default function CharacterList() {
     <>
       <SearchForm 
         characters={characters}
-        setDisplayed={setDisplayed}
+        setDisplay={setDisplay}
       />
 
       <section className="character-list grid-view">
-        {displayed.map(character => (
+        {display.map(character => (
           <CharacterCard 
             key={character.id} 
             character={character} 
