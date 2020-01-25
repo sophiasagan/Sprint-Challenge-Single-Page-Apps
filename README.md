@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Some benefits of client-side routing is that less data is requested and not pulling on the server throughout the user's experience. The pages will render faster except at the initial loading. 
 
 ## Project Set Up
 
